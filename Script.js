@@ -32,9 +32,11 @@ document.querySelector('.finder-btn').onclick = function getMovies(event) {
             document.querySelector('.movies').style.display = 'block';
 
             if (results > 0) {
+                let modalId = 0
                 movies.forEach(movie => {
+                    modalId ++
                     let img = getUrlimg(movie.poster_path)
-                    let overview = movie.overview.slice(0, 120)
+                    let overview = movie.overview.slice(0, 110)
                     let age
                     movie.adult == true ? age = "+18" : age = "+12"
                     document.querySelector('.inserts').innerHTML += `
@@ -43,11 +45,68 @@ document.querySelector('.finder-btn').onclick = function getMovies(event) {
                         class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
                             <strong class="d-inline-block mb-2 text-primary">${age}</strong>
-                            <h5 class="mb-0">${movie.title}</h3>
+                            <h5 class="mb-0">${movie.title}</h5>
                             <div class="mb-1 text-muted">${movie.release_date}</div>
                             <p class="card-text mb-auto">${overview}...</p>
-                            <a href="#" class="stretched-link">Continuar Leyendo</a>
+
+<!--                         START MODAL                             -->
+                      
+                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-modal${modalId}-lg">Mas detalles</button>
+
+                        <div class="modal fade bd-modal${modalId}-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-light">
+                                        <h5 class="modal-title">Detalles de la Pelicula</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="container">
+                                                <div class="col-mt-auto">
+                                                    <div
+                                                        class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                        <div class="col p-4 d-flex flex-column position-static">
+                                                            <strong class="d-inline-block mb-2 text-primary">${age}</strong>
+                                                            <h2 class="mb-3 text-justify">${movie.title}</h2>
+                                                            <div class="mx-1 text-muted">${movie.release_date}</div>
+                                                            <p class="card-text p-2 mb-2 text-justify mb-auto">
+                                                                ${movie.overview}
+                                                            </p>
+                                                            
+                                                            <ul class="list-group list-group-horizontal">
+                                                                <li class="list-group-item font-weight-bolder">Average de Votos: <span class"text-muted">${movie.vote_average}</span></li>
+                                                                <li class="list-group-item font-weight-bolder text-uppercase">Lenguaje Original: <span class"font-weight-normal ">${movie.original_language}</span></li>
+                                                                <li class="list-group-item font-weight-bolder">Popularidad: <span class"font-weight-normal">${movie.popularity}</span></li>
+                                                            </ul>
+                                                            
+                                                        </div>
+                                                        <div class="col-auto my-auto d-none d-lg-block">
+                                                            <div class="container">
+                                                                <img class="rounded" src="${img}" width="255" alt="....">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer bg-light">
+                                        <div class="container col-md-5 mx-auto">
+                                            <button type="button" class="btn btn-block btn-outline-primary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+<!--                                    END MODAL                                      -->
+
+                        </div><!-- END COL P-4-->
                         <div class="col-auto ">
                             <div class="row">
                                 <div class ="container">
@@ -91,22 +150,81 @@ document.querySelector('.finder').onkeyup = function getMovies(event) {
                 document.querySelector('.movies').style.display = 'block';
 
                 if (results > 0) {
-                    movies.forEach(movie => {
-                        let img = getUrlimg(movie.poster_path)
-                        let overview = movie.overview.slice(0, 120)
-                        let age
-                        movie.adult == true ? age = "+18" : age = "+12"
-                        document.querySelector('.inserts').innerHTML += `
+                    let modalId = 0
+                movies.forEach(movie => {
+                    modalId ++
+                    let img = getUrlimg(movie.poster_path)
+                    let overview = movie.overview.slice(0, 110)
+                    let age
+                    movie.adult == true ? age = "+18" : age = "+12"
+                    document.querySelector('.inserts').innerHTML += `
                     <div class="col-sm-12 col-md-12 col-lg-6">
                     <div
                         class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
                             <strong class="d-inline-block mb-2 text-primary">${age}</strong>
-                            <h5 class="mb-0">${movie.title}</h3>
+                            <h5 class="mb-0">${movie.title}</h5>
                             <div class="mb-1 text-muted">${movie.release_date}</div>
                             <p class="card-text mb-auto">${overview}...</p>
-                            <a href="#" class="stretched-link">Continuar Leyendo</a>
+
+<!--                         START MODAL                             -->
+                      
+                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-modal${modalId}-lg">Mas detalles</button>
+
+                        <div class="modal fade bd-modal${modalId}-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-light">
+                                        <h5 class="modal-title">Detalles de la Pelicula</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="container">
+                                                <div class="col-mt-auto">
+                                                    <div
+                                                        class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                        <div class="col p-4 d-flex flex-column position-static">
+                                                            <strong class="d-inline-block mb-2 text-primary">${age}</strong>
+                                                            <h2 class="mb-3 text-justify">${movie.title}</h2>
+                                                            <div class="mx-1 text-muted">${movie.release_date}</div>
+                                                            <p class="card-text p-2 mb-2 text-justify mb-auto">
+                                                                ${movie.overview}
+                                                            </p>
+                                                            
+                                                            <ul class="list-group list-group-horizontal">
+                                                                <li class="list-group-item font-weight-bolder">Average de Votos: <span class"text-muted">${movie.vote_average}</span></li>
+                                                                <li class="list-group-item font-weight-bolder text-uppercase">Lenguaje Original: <span class"font-weight-normal ">${movie.original_language}</span></li>
+                                                                <li class="list-group-item font-weight-bolder">Popularidad: <span class"font-weight-normal">${movie.popularity}</span></li>
+                                                            </ul>
+                                                            
+                                                        </div>
+                                                        <div class="col-auto my-auto d-none d-lg-block">
+                                                            <div class="container">
+                                                                <img class="rounded" src="${img}" width="255" alt="....">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer bg-light">
+                                        <div class="container col-md-5 mx-auto">
+                                            <button type="button" class="btn btn-block btn-outline-primary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+<!--                                    END MODAL                                      -->
+
+                        </div><!-- END COL P-4-->
                         <div class="col-auto ">
                             <div class="row">
                                 <div class ="container">
@@ -117,8 +235,8 @@ document.querySelector('.finder').onkeyup = function getMovies(event) {
                     </div>
                 </div>
                     `
-                    })
-                    downWindow(600)
+                })
+                downWindow(600)
                 } else {
                     document.querySelector('.inserts').innerHTML = `
                 <div class="container col-12">
