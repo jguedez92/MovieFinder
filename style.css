@@ -1,0 +1,28 @@
+/*<<<<<<<<<    TEXT STYLESHEET CSS    >>>>>>>>>*/
+
+.jumbotron{
+    background-image: url(https://media-cdn.t24.com.tr/media/stories/2015/02/raw_bu-hafta-vizyona-hangi-filmler-geliyor_899500500.jpg) !important;
+    background-size: cover;
+}
+
+#text-jumbotron{
+    background: #4b6685b2 !important;
+    padding: 1em 2em !important;
+    border-radius: 5px;
+}
+
+#text-jumbotron h1, #text-jumbotron p{
+    font-weight: bold !important;
+}
+
+#text-jumbotron h1{
+    font-size: 7vh;
+}
+
+.movies{
+    display: none;
+}
+
+.navbar a{
+    font-weight: bold;
+}

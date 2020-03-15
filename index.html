@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="Script.js" async></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/1.png" type="image/x-icon">
+    <title>API - REST | MovieFinder</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light shadow p-3 mb-5 bg-white rounded">
+            <a class="navbar-brand text-primary" href="/index.html">
+                <img class="rounded-lg" src="/img/1.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                MovieFinder
+            </a>
+            <button class="navbar-toggler text-primary" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-primary" href="#">Noticias</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-primary" href="#">Los Mas Votados</a>
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="form-inline my-3 my-lg-2">
+                    <input class="form-control mr-sm-2 border-primary    finder" type="search"
+                        placeholder="Buscar Peliculas" aria-label="Search">
+                    <button class="btn finder-btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+
+        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+            <div id="text-jumbotron" class=" col-md-5 px-0">
+                <h1 class="display-4 font-italic">Busca la Pelicula que necesites</h1>
+                <p class="lead text-center my-3">
+                    Es muy sencillo!....<br>
+                    Solo coloca el nombre de la peli que buscas y te mostraremos informacion relevante sobre ella.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <main role="main" class="container">
+        <div class="notices">
+            <div class="row marketing">
+                <div class="col-md-8 blog-main">
+                    <h3 class="pb-4 mb-4 text-primary font-italic border-bottom">
+                        Ultimas Noticias
+                    </h3>
+                    <div class="blog-post">
+
+                        <div class="row featurette">
+                            <div class="col-md-7">
+                                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll
+                                        blow
+                                        your
+                                        mind.</span></h2>
+                                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula
+                                    porta
+                                    felis
+                                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                                    Fusce
+                                    dapibus,
+                                    tellus ac cursus commodo.</p>
+                            </div>
+                            <div class="col-md-5">
+                                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width="500" height="500" xmlns="http://www.w3.org/2000/svg"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                                    aria-label="Placeholder: 500x500">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%"
+                                        fill="#aaa" dy=".3em">500x500</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <hr class="featurette-divider">
+
+                        <div class="row featurette">
+                            <div class="col-md-7 order-md-2">
+                                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
+                                        yourself.</span></h2>
+                                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula
+                                    porta
+                                    felis
+                                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                                    Fusce
+                                    dapibus,
+                                    tellus ac cursus commodo.</p>
+                            </div>
+                            <div class="col-md-5 order-md-1">
+                                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width="500" height="500" xmlns="http://www.w3.org/2000/svg"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                                    aria-label="Placeholder: 500x500">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%"
+                                        fill="#aaa" dy=".3em">500x500</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <hr class="featurette-divider">
+
+                        <div class="row featurette">
+                            <div class="col-md-7">
+                                <h2 class="featurette-heading">And lastly, this one. <span
+                                        class="text-muted">Checkmate.</span>
+                                </h2>
+                                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula
+                                    porta
+                                    felis
+                                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                                    Fusce
+                                    dapibus,
+                                    tellus ac cursus commodo.</p>
+                            </div>
+                            <div class="col-md-5">
+                                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width="500" height="500" xmlns="http://www.w3.org/2000/svg"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                                    aria-label="Placeholder: 500x500">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%"
+                                        fill="#aaa" dy=".3em">500x500</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <hr class="featurette-divider">
+
+                        <div class="row featurette">
+                            <div class="col-md-7 order-md-2">
+                                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
+                                        yourself.</span></h2>
+                                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula
+                                    porta
+                                    felis
+                                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                                    Fusce
+                                    dapibus,
+                                    tellus ac cursus commodo.</p>
+                            </div>
+                            <div class="col-md-5 order-md-1">
+                                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width="500" height="500" xmlns="http://www.w3.org/2000/svg"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                                    aria-label="Placeholder: 500x500">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%"
+                                        fill="#aaa" dy=".3em">500x500</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.blog-main -->
+                <aside class="col-md-4 blog-sidebar">
+                    <div class="row border-left bg-light rounded-lg">
+                        <div class="p-4 mb-3 ">
+                            <h4 class="font-italic">About</h4>
+                            <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis
+                                consectetur
+                                purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                        </div>
+
+                        <div class="p-4">
+                            <h4 class="font-italic">Archives</h4>
+                            <ol class="list-unstyled mb-0">
+                                <li><a href="#">March 2014</a></li>
+                                <li><a href="#">February 2014</a></li>
+                                <li><a href="#">January 2014</a></li>
+                                <li><a href="#">December 2013</a></li>
+                                <li><a href="#">November 2013</a></li>
+                                <li><a href="#">October 2013</a></li>
+                                <li><a href="#">September 2013</a></li>
+                                <li><a href="#">August 2013</a></li>
+                                <li><a href="#">July 2013</a></li>
+                                <li><a href="#">June 2013</a></li>
+                                <li><a href="#">May 2013</a></li>
+                                <li><a href="#">April 2013</a></li>
+                            </ol>
+                        </div>
+
+                        <div class="p-4">
+                            <h4 class="font-italic">Elsewhere</h4>
+                            <ol class="list-unstyled">
+                                <li><a href="#">GitHub</a></li>
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Facebook</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </aside><!-- /.blog-sidebar -->
+            </div><!-- /.row -->
+        </div><!-- /.notices -->
+        <div class="row movies">
+            <h3 class="pb-4 mb-4 text-primary font-italic border-bottom">
+                Resultados de la Busqueda
+            </h3>
+            <div class="row mb-2 inserts">
+
+            </div>
+        </div>
+    </main>
+
+    <div class="container">
+        <hr class="featurette-divider">
+        <footer class="blog-footer ">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <p>Desing built with <a href="https://getbootstrap.com/">Bootstrap</a> by <a
+                            href="https://github.com/jguedez92">@JotaGe</a>.</p>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 text-right">
+                    <p>
+                        <a class="btn-top" href="#">Back to top</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!--                SECCION JAVASCRIPT DE BOOTSTRAP                    -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
