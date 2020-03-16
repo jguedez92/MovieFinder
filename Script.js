@@ -23,13 +23,13 @@ window.addEventListener('load', ()=>{
     fetch('https://api.themoviedb.org/3/discover/movie?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&year=2020')
     .then(res => res.json())
     .then(res => {
-        let movies = res.results.slice(0, 12);
+        let movies = res.results.slice(0, 16);
         
         movies.forEach( movie => {
             let img = getUrlimg(movie.poster_path)
             document.querySelector('#inserts-home').innerHTML += `
             <div class="container  mb-4 ml-0 col-6">
-                <img class="rounded-lg" src="${img}" width="140" alt="....">
+                <img class="rounded-lg" src="${img}" width="165" alt="....">
             </div>            `
         });
     })
