@@ -26,3 +26,7 @@
 .navbar a{
     font-weight: bold;
 }
+
+.b-aside{
+    border: none;
+}
