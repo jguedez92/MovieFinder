@@ -19,6 +19,22 @@ const getUrlimg = (img) => {
     }
 }
 
+window.addEventListener('load', ()=>{
+    fetch('https://api.themoviedb.org/3/discover/movie?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&year=2020')
+    .then(res => res.json())
+    .then(res => {
+        let movies = res.results.slice(0, 12);
+        
+        movies.forEach( movie => {
+            let img = getUrlimg(movie.poster_path)
+            document.querySelector('#inserts-home').innerHTML += `
+            <div class="container  mb-4 ml-0 col-6">
+                <img class="rounded-lg" src="${img}" width="140" alt="....">
+            </div>            `
+        });
+    })
+})
+
 document.querySelector('.finder-btn').onclick = function getMovies(event) {
     const busqueda = document.querySelector('.finder').value
     fetch('https://api.themoviedb.org/3/search/movie?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&query=' + busqueda)
@@ -254,7 +270,6 @@ document.querySelector('.finder').onkeyup = function getMovies(event) {
     }
 }
 
-
 /*
 fetch('https://api.themoviedb.org/3/search/movie?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&query='+busqueda)
 .then(res=>res.json())//parsearlo a json
@@ -274,6 +289,6 @@ fetch('https://api.themoviedb.org/3/search/movie?api_key=cea68b520beecac6718820e
     });
 })
 
-https://api.themoviedb.org/3/discover/movie?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&year=2020
+
 
 */
