@@ -420,7 +420,8 @@ const getMoviesEnter = (arg) => {
             let movies = res.results.slice(0, 10);
             return movies
         })
-        .catch(error => console.error(error))        
+        .catch(error => console.error(error))  
+              
 }
 
 prueba = getMoviesEnter('casa');
